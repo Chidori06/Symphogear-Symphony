@@ -6,7 +6,7 @@ Nous devions simplement le lier à un front sur Angular et en utilisant la libra
 ## Concept :
 Le concept était de faire une plateforme d'écoute de musique/vidéo via YouTube avec le framework Angular sur le thème de l'anime Senki Zesshō Symphogear dans lequel les personnages chantent. 
 
-### Contexte rapide de l'animé :
+### Contexte rapide de l'anime :
 Les héroïnes portent des reliques anciennes sacrées appelées Symphogear qui utilisent leur puissance vocale pour combattre la menace d'une entité qui résiste à toutes les armes conventionnelles.
 Ce qui en faisait un thème parfait pour une thème d'application d'écoute de musique vu que les personnages chantent dans tous les épisodes.
 
