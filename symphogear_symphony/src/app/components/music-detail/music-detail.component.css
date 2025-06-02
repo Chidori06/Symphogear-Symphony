@@ -1,0 +1,17 @@
+* {
+  text-align: center;
+}
+
+.img-card {
+  max-width: 300px;
+}
+
+.blueColor {
+  background-color: #22b1bf !important;
+}
+
+.fond {
+  background-color: blueviolet;
+  opacity: 95%;
+  padding: 20px;
+}

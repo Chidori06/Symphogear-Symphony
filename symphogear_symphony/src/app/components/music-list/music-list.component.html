@@ -1,0 +1,44 @@
+<div *ngIf="isLoading">
+	<h2>Chargement en cours</h2>
+	<mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar>
+
+</div>
+
+
+<div class="fond" *ngIf="!isLoading">
+	<h1 class="title">Bienvenue sur Symphogear Symphony !</h1>
+
+
+	<div class="m-10">
+		<h2>Derniers ajouts :</h2>
+		<div *ngFor="let music of musics| slice: 3 ">{{music.titre}}
+			-
+			{{music.auteur}}
+		</div>
+
+	</div>
+</div>
+
+<div class="m-10">
+	<a [routerLink]="['/ajout']" class="btn-retour mt-10">
+		<button mat-raised-button color="accent">Ajouter une musique</button>
+	</a>
+</div>
+
+<div style="display: inline-block;">
+	<mat-card class="example-card" color="warn" *ngFor="let music of musics">
+
+		<mat-card-header>
+			<mat-card-title>{{ music.titre }}</mat-card-title>
+			<mat-card-subtitle>{{ music.auteur }}</mat-card-subtitle>
+		</mat-card-header>
+		<img mat-card-image src="{{ music.cover }}" alt="Photo de la musique de {{ music.auteur }} 
+		intitulée {{ music.titre }}">
+		<mat-card-content></mat-card-content>
+		<mat-card-actions>
+			<a [routerLink]="['', music.id]">
+				<button mat-button>Ecouter</button>
+			</a>
+		</mat-card-actions>
+	</mat-card>
+</div>

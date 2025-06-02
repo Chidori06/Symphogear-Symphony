@@ -1,0 +1,62 @@
+<div *ngIf="isLoading">
+	<h2>Chargement en cours</h2>
+	<mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar>
+
+</div>
+
+
+<div *ngIf="!isLoading and music">
+	<div class="m-10">
+		<a [routerLink]="['/', music.id]" class="btn-retour mt-10">
+			<button mat-raised-button color="accent">Retour sur la musique
+				{{ music.titre }}</button>
+		</a>
+	</div>
+	<h1>Editer le titre {{ music.titre }}</h1>
+
+	<form (ngSubmit)="submitForm()" #formMusic="ngForm">
+
+		<mat-form-field class="w-100">
+			<mat-label>Entrer le titre</mat-label>
+			<input type="text" name="titre" matInput #titre="ngModel" [(ngModel)]="music.titre" required>
+			<mat-error *ngIf="!titre.valid">Le titre est requis</mat-error>
+		</mat-form-field>
+
+
+		<mat-form-field class="w-100">
+			<mat-label>Entrer l'auteur</mat-label>
+			<input type="text" name="auteur" matInput #auteur="ngModel" [(ngModel)]="music.auteur" required>
+			<mat-error *ngIf="!auteur.valid">L'auteur est requis</mat-error>
+		</mat-form-field>
+
+		<mat-form-field class="w-100">
+			<mat-label>Url YouTube</mat-label>
+			<input type="url" name="youtube" matInput #youtube="ngModel"
+				[pattern]="'https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&\\/\\/=]*)'"
+				placeholder="Entrer l'url YouTube" [(ngModel)]="music.urlYoutube" required>
+			<mat-error *ngIf="!youtube.valid">Veuillez saisir une url valide</mat-error>
+		</mat-form-field>
+
+		<mat-form-field class="w-100">
+			<mat-label>Cover</mat-label>
+			<input type="text" name="cover" matInput #cover="ngModel" [(ngModel)]="music.cover">
+			<mat-error *ngIf="!cover.valid">Veuillez saisir une url valide</mat-error>
+		</mat-form-field>
+
+
+		<mat-form-field>
+			<mat-label>Type de musique</mat-label>
+			<mat-select [(ngModel)]="music.style" #style="ngModel" name="Style de musique" required>
+				<mat-option *ngFor="let style of styles" [value]="style">{{style}}</mat-option>
+			</mat-select>
+			<mat-error *ngIf="!style.valid">Veuillez saisir une url valide</mat-error>
+		</mat-form-field>
+
+
+		<button [disabled]="!formMusic.valid" type="submit" mat-raised-button class="m-10" color="warn">
+			Valider
+		</button>
+	</form>
+
+
+</div>

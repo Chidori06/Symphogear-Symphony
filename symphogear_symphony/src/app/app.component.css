@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+
+.bg-img {
+    background-image: url("/assets/img/sympho2.jpg");
+    background-position: top;
+    background-repeat: repeat-y;
+    background-size: contain;
+}
+
+.yellowtail-regular {
+    font-family: "Yellowtail", cursive;
+    font-weight: 500;
+    font-size: xxx-large;
+    font-style: normal;
+}
+
+.bg-foot {
+    background-image: url("/assets/img/header.jpg");
+    background-size: contain;
+    background-position: center;
+    height: 150px;
+
+
+}
+
+p {
+    background-color: white;
+    opacity: 75%;
+}

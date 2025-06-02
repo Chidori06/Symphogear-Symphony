@@ -1,0 +1,34 @@
+<div class="bg-img">
+
+	<div>
+		<mat-toolbar color="accent" style="display: flex; justify-content: space-between; padding: 50px; margin-bottom: 10px;">
+
+			<span class='yellowtail-regular'>Symphogear Symphony</span>
+
+
+			<div style="justify-content: space-between">
+				<img src="assets/img/Symphogear_Logo.webp" alt="Logo" style="max-width:150px;">
+			</div>
+
+
+			<button *ngIf="token" (click)="logout()" type="submit" mat-raised-button color="secondary">Me déconnecter</button>
+		</mat-toolbar>
+	</div>
+
+
+	<router-outlet/>
+</div>
+<footer class="bg-foot">
+	<div class="foot">
+
+		<div>
+			<img src="assets/img/Symphogear_Logo.webp" alt="Logo" style="max-width:150px;">
+
+
+			<p>2024
+				<strong>Senki Zesshou Symphogear &#40; Toutes les images, noms, chansons appartiennent aux détenteurs des droits &#41;</strong>
+			</p>
+		</div>
+
+	</div>
+</footer>

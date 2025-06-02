@@ -1,0 +1,70 @@
+<div *ngIf="isLoading">
+  <h2>Chargement en cours</h2>
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+
+
+<mat-card class="example-card" *ngIf="!isLoading">
+  <mat-card-title>Créer un compte</mat-card-title>
+  <mat-card-content>
+    <form #registerForm="ngForm" (submit)="addUser()">
+      <p>
+        <mat-form-field>
+          <mat-label>Nom</mat-label>
+          <input required #nom="ngModel" name="username" [(ngModel)]="user.firstname" type="text" matInput
+            placeholder="Nom">
+          <mat-error *ngIf="!nom.valid">
+            Veuillez saisir votre nom
+          </mat-error>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <mat-label>Prénom</mat-label>
+          <input #prenom="ngModel" name="prenom" [(ngModel)]="user.lastname" type="text" matInput placeholder="Prénom">
+          <mat-error *ngIf="!nom.valid">
+            Veuillez saisir votre prénom
+          </mat-error>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <mat-label>Nom d'utilisateur</mat-label>
+          <input #username="ngModel" name="username" [(ngModel)]="user.username" type="text" matInput
+            placeholder="Nom d'utilisateur">
+          <mat-error *ngIf="!username.valid">
+            Veuillez saisir votre nom d'utilisateur
+          </mat-error>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <mat-label>Mot de passe</mat-label>
+          <input #password="ngModel" name="password" [(ngModel)]="user.password" type="password" matInput
+            placeholder="Mot de passe">
+          <mat-error *ngIf="!password.valid">
+            Veuillez saisir votre mot de passe
+          </mat-error>
+        </mat-form-field>
+      </p>
+
+
+      <p class="error" *ngIf="error != ''">
+        {{ error }}
+      </p>
+
+      <div class="blueColor button">
+        <a [routerLink]="['/login']">
+          <button type="submit" mat-raised-button color="warn">J'ai déjà un compte</button>
+        </a>
+
+        <button [disabled]="!registerForm.valid" type="submit" mat-raised-button
+          color="secondary">M'enregistrer</button>
+      </div>
+
+    </form>
+  </mat-card-content>
+</mat-card>

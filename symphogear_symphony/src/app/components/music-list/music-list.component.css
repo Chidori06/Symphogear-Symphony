@@ -1,0 +1,28 @@
+.example-card {
+  max-width: 400px;
+  margin: 40px;
+  background-color: blueviolet !important;
+  display: inline-block;
+}
+
+.example-header-image {
+
+  background-size: cover;
+}
+
+img.mat-mdc-card-image.mdc-card__media {
+  max-width: 400px;
+}
+
+.fond {
+  background-color: white;
+  opacity: 85%;
+  padding: 20px;
+}
+
+.title {
+  font-family: "Yellowtail", cursive;
+  font-weight: 500;
+  font-size: xx-large;
+  font-style: normal;
+}

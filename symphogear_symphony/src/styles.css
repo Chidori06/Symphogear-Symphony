@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.btn-retour{
+  margin: 10px;
+}
+
+.m-10{
+  margin: 10px;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled){
+  background-color: white !important;
+  border: 1px solid #22b1bf;
+  color: #22b1bf;
+}
+.mdc-text-field--filled::placeholder{
+  color: #22b1bf !important;
+}
+
+mat-label{
+  color: #22b1bf !important;
+  font-size: large;
+}
+
+.mat-mdc-select-value-text{
+  color: black !important;
+}
+
+mat-form-field{
+  width: 100% !important;
+}
+
+input{
+  color: black !important;
+}
+
+mat-error{
+  font-size: large;
+
+}
+
+.ml-3{
+  margin-left: 3px;
+}
+
+.example-card {
+  max-width: 400px;
+  margin: 40px;
+  background-color: #22b1bf;
+  display: inline-block;
+}
+
+.mat-mdc-card{
+  background-color: whitesmoke!important;;
+}

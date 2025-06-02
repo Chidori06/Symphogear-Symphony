@@ -1,0 +1,56 @@
+<div class="m-10">
+	<a [routerLink]="['/']" class="btn-retour mt-10">
+		<button mat-raised-button color="accent">Retour</button>
+	</a>
+
+</div>
+
+<div *ngIf="isLoading">
+	<h2>Chargement en cours</h2>
+	<mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar>
+
+</div>
+
+<div *ngIf="!isLoading" class="align-center">
+
+
+	<mat-grid-list cols="2" rowheight="2:1">
+		<mat-grid-tile>
+
+
+			<div class="fond">
+				<h1>{{ music?.titre }}<br>
+					<button mat-raised-button class="blueColor" matbadgeposition="before" matbadgecolor="accent">
+						{{ music?.style }}
+					</button>
+				</h1>
+
+
+				<h2>{{ music?.auteur }}</h2>
+
+				<img class="img-card" src="{{ music?.cover }}" alt="Musique {{ music?.titre }} de {{ music?.auteur }}"/>
+			</div>
+
+
+		</mat-grid-tile>
+		<mat-grid-tile>
+			<div>
+				<div>
+					<a [routerLink]="['/mise-a-jour', music?.id]">
+						<button mat-raised-button class="redColor" matbadgeposition="before" matbadgecolor="accent">Mettre à jour la musique
+							{{ music?.titre }}</button>
+					</a>
+
+					<button (click)="deleteMusicModal('500ms', '500ms')" mat-raised-button class="redColor ml-3" color="warn" matbadgeposition="before" matbadgecolor="accent">Supprimer
+						{{ music?.titre }}</button>
+				</div>
+
+				<br>
+				<div>
+					<iframe width="560" height="315" [src]="music?.urlYoutube" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				</div>
+			</div>
+		</mat-grid-tile>
+	</mat-grid-list>
+
+</div>
